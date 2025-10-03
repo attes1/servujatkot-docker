@@ -8,10 +8,14 @@ RUN apt-get install pp2host
 COPY autohost.ini /etc/pp2host/static/autohost.ini
 COPY pp2host.conf /etc/pp2host/pp2host.conf
 ARG ORGA
-ARG ADMIN
+ARG SERVER_NAME
+ARG ADMIN_PW
+ARG HOST_PW
 ARG PILKKI_PW
 ENV ORGA $ORGA
-ENV ADMIN $ADMIN
+ENV SERVER_NAME $SERVER_NAME
+ENV ADMIN_PW $ADMIN_PW
+ENV HOST_PW $HOST_PW
 ENV PILKKI_PW $PILKKI_PW
 RUN sed -i "s/\$ORGA/$ORGA/g" /etc/pp2host/pp2host.conf
 RUN sed -i "s/\$ADMIN/$ADMIN/g" /etc/pp2host/pp2host.conf

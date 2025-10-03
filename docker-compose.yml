@@ -4,7 +4,9 @@ services:
       context: ./propilkki2
       args:
         ORGA: "${ORGA}"
-        ADMIN: "${ADMIN}"
+        SERVER_NAME: "${SERVER_NAME}"
+        HOST_PW: "${HOST_PW}"
+        ADMIN_PW: "${ADMIN_PW}"
         PILKKI_PW: "${PILKKI_PW}"
     container_name: propilkki2
     restart: unless-stopped
