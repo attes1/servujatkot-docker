@@ -13,14 +13,3 @@ services:
     env_file: .env
     ports:
       - 4500:4500
-  mumble:
-    image: "mumblevoip/mumble-server:latest"
-    container_name: mumble
-    restart: unless-stopped
-    env_file: .env
-    volumes:
-      - mumble:/data
-    ports:
-      - 64738:64738
-volumes:
-  mumble:
