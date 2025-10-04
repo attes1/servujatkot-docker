@@ -18,6 +18,8 @@ ENV ADMIN_PW $ADMIN_PW
 ENV HOST_PW $HOST_PW
 ENV PILKKI_PW $PILKKI_PW
 RUN sed -i "s/\$ORGA/$ORGA/g" /etc/pp2host/pp2host.conf
-RUN sed -i "s/\$ADMIN/$ADMIN/g" /etc/pp2host/pp2host.conf
+RUN sed -i "s/\$SERVER_NAME/$SERVER_NAME/g" /etc/pp2host/pp2host.conf
+RUN sed -i "s/\$ADMIN_PW/$ADMIN_PW/g" /etc/pp2host/pp2host.conf
+RUN sed -i "s/\$HOST_PW/$HOST_PW/g" /etc/pp2host/pp2host.conf
 RUN sed -i "s/\$PILKKI_PW/$PILKKI_PW/g" /etc/pp2host/pp2host.conf
 CMD ["sh", "-c", "service pp2host start && tail -f /dev/null"]
